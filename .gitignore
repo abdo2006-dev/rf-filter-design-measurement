@@ -1,0 +1,75 @@
+# ---------------------------------------------------------------------------
+# Copyright protection — never commit third-party books/papers/app notes.
+# research/ holds METADATA ONLY. See research/source_hierarchy.md.
+# ---------------------------------------------------------------------------
+*.pdf
+*.djvu
+*.epub
+*.mobi
+!**/our_*.pdf
+!pcb/exports/**/*.pdf
+!seminar/final/*.pdf
+
+# ---------------------------------------------------------------------------
+# Keysight ADS — keep human-readable design intent, exclude heavy/derived data
+# ---------------------------------------------------------------------------
+*_wrk/logs/
+*_wrk/sim*/
+*_wrk/mom_dsn/
+*_wrk/*.ael.bak
+*_wrk/.ads*
+*.ds
+*.dds.bak
+hpeesofsim.log
+*.sts
+*.cti
+simulation/
+*.ckt
+netlist.log
+
+# EM solver intermediate / mesh / matrix dumps (can be GB-sized)
+*.mom
+*.rsp
+*.pde
+*.gph
+
+# ---------------------------------------------------------------------------
+# PCB CAD intermediates (committed exports live in pcb/exports/)
+# ---------------------------------------------------------------------------
+*-backups/
+*.kicad_pcb-bak
+*.kicad_prl
+fp-info-cache
+*.net.bak
+*.lck
+
+# ---------------------------------------------------------------------------
+# Measurement — raw Touchstone IS committed (it is the evidence).
+# Only exclude instrument junk.
+# ---------------------------------------------------------------------------
+*.sta
+*.cst
+Thumbs.db
+.DS_Store
+
+# ---------------------------------------------------------------------------
+# Scratch / local
+# ---------------------------------------------------------------------------
+scratch/
+tmp/
+*.tmp
+*.swp
+*~
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------------------
+# Never commit secrets or lab credentials
+# ---------------------------------------------------------------------------
+*.key
+*.pem
+.env
+licence*.lic
+license*.lic
